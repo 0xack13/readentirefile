@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "readelf.h"
 
 const char app_name[] = "readentirefile";
 
@@ -45,7 +46,9 @@ int main(int argc, char *argv[])
     fclose(infile);
 
     // read the file
-    printf("The file called %s contains this text\n\n%s", argv[1], buffer);
+    printf("The file called %s contains this text\n\n%s\n\n", argv[1], buffer);
+    show_header(buffer);
+    printf("Number of bytes read: %ld\n", numbytes);
 
     /* free the memory we used for the buffer */
     free(buffer);

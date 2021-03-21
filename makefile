@@ -10,7 +10,7 @@ TARGET = readentirefile
 all: $(TARGET)
 
 $(TARGET): $(TARGET).c
-	$(CC) $(CFLAGS) -o $(TARGET) $(TARGET).c
+	$(CC) $(CFLAGS) -o $(TARGET) *.c
 
 clean:
 	$(RM) $(TARGET)
